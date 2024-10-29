@@ -6,9 +6,15 @@ class CaffeineBeverage(ABC):
     @final
     def prepare(self):
         self.boil_water()
+        self.pre_brew()
         self.brew()
         self.pour()
-        self.add_condiments()
+        if self.should_add_condiments():
+            self.add_condiments()
+
+    # Hook
+    def pre_brew(self):
+        pass
 
     @abstractmethod
     def brew(self):
@@ -26,6 +32,10 @@ class CaffeineBeverage(ABC):
     def pour():
         print('Pour into cup')
 
+    # Additional type of hook
+    def should_add_condiments(self) -> bool:
+        return True
+
 
 class Coffee(CaffeineBeverage):
     def brew(self):
@@ -36,11 +46,19 @@ class Coffee(CaffeineBeverage):
 
 
 class Tea(CaffeineBeverage):
+    def pre_brew(self):
+        print('Add honey')
+
     def brew(self):
         print('Steeping the tea')
 
     def add_condiments(self):
-        print('Adding sweetener')
+        print('Adding milk')
+
+    # Here we could do things like as the customer
+    # if they want to add condiments
+    def should_add_condiments(self) -> bool:
+        return False
 
 
 if __name__ == "__main__":

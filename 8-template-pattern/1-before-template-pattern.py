@@ -44,3 +44,14 @@ class Tea:
     @staticmethod
     def add_sweetener():
         print('Adding sweetener')
+
+
+if __name__ == "__main__":
+    print('Make tea...')
+    tea = Tea()
+    tea.prepare()
+
+    print('--------------')
+    print('Make coffee...')
+    coffee = Coffee()
+    coffee.prepare()
