@@ -90,40 +90,40 @@ def space():
 
 
 if __name__ == "__main__":
-    gumball_machine = GumballMachine(5)
+    machine = GumballMachine(5)
 
-    print(gumball_machine)
+    print(machine)
     space()
 
-    gumball_machine.insert_quarter()
-    gumball_machine.turn_crank()
+    machine.insert_quarter()
+    machine.turn_crank()
     space()
 
-    print(gumball_machine)
+    print(machine)
     space()
 
-    gumball_machine.insert_quarter()
-    gumball_machine.eject_quarter()
-    gumball_machine.turn_crank()
+    machine.insert_quarter()
+    machine.eject_quarter()
+    machine.turn_crank()
     space()
 
-    gumball_machine.insert_quarter()
-    gumball_machine.turn_crank()
-    gumball_machine.insert_quarter()
-    gumball_machine.turn_crank()
-    gumball_machine.eject_quarter()
+    machine.insert_quarter()
+    machine.turn_crank()
+    machine.insert_quarter()
+    machine.turn_crank()
+    machine.eject_quarter()
     space()
 
-    print(gumball_machine)
+    print(machine)
     space()
 
-    gumball_machine.insert_quarter()
-    gumball_machine.insert_quarter()
-    gumball_machine.turn_crank()
-    gumball_machine.insert_quarter()
-    gumball_machine.turn_crank()
-    gumball_machine.insert_quarter()
-    gumball_machine.turn_crank()
+    machine.insert_quarter()
+    machine.insert_quarter()
+    machine.turn_crank()
+    machine.insert_quarter()
+    machine.turn_crank()
+    machine.insert_quarter()
+    machine.turn_crank()
     space()
 
-    print(gumball_machine)
+    print(machine)
