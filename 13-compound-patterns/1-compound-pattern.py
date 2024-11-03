@@ -1,10 +1,4 @@
-from abc import ABC, abstractmethod
-
-
-class Quackable(ABC):
-    @abstractmethod
-    def quack(self):
-        pass
+from quackable import Quackable
 
 
 class MallardDuck(Quackable):
@@ -78,6 +72,7 @@ if __name__ == "__main__":
     simulate(mallard_duck)
     simulate(redhead_duck)
     simulate(duck_call)
+    simulate(rubber_duck)
     simulate(rubber_duck)
 
     goose = GooseAdapter(Goose())
