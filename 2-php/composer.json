@@ -1,0 +1,25 @@
+{
+  "name": "cjbagley/head-first-design-patterns",
+  "description": "Coding along with the 'Head First Design Patterns' 2nd edition ",
+  "authors": [
+    {
+      "name": "Colin Bagley",
+      "email": "cjbagley@googlemail.com"
+    }
+  ],
+  "autoload": {
+    "psr-4": {
+      "DesignPatterns\\": "src/"
+    }
+  },
+  "autoload-dev": {
+    "psr-4": {
+      "DesignPatterns\\Tests\\": "src/"
+    }
+  },
+  "require-dev": {
+    "phpunit/phpunit": "^11.5",
+    "phpstan/phpstan": "^2.1",
+    "rector/rector": "^2.0"
+  }
+}
