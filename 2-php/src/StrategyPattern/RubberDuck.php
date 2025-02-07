@@ -2,10 +2,12 @@
 
 namespace DesignPatterns\StrategyPattern;
 
-class Duck implements QuackableInterface
+use DesignPatterns\StrategyPattern\Duck;
+
+class RubberDuck extends Duck
 {
     public function quack(): string
     {
-        return 'quack';
+       return 'squeak';
     }
 }
