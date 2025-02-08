@@ -4,22 +4,24 @@ declare(strict_types=1);
 
 namespace DesignPatterns\StrategyPattern\Ducks;
 
-use DesignPatterns\StrategyPattern\Behaviour\Quacks\QuackBehaviourInterface;
+use DesignPatterns\StrategyPattern\Behaviour\Fly\FlyBehaviourInterface;
+use DesignPatterns\StrategyPattern\Behaviour\Quack\QuackBehaviourInterface;
 
 abstract class AbstractDuck implements QuackBehaviourInterface
 {
-    public function display(): string
-    {
-        return 'I\m a real duck';
-    }
+    protected QuackBehaviourInterface $quackBehaviour;
+
+    protected FlyBehaviourInterface $flyBehaviour;
+
+    abstract public function display(): string;
 
     public function quack(): string
     {
-        return 'quack';
+        return $this->quackBehaviour->quack();
     }
 
     public function fly(): string
     {
-        return 'I fly with wings';
+        return $this->flyBehaviour->fly();
     }
 }

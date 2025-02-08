@@ -2,7 +2,7 @@
 
 declare(strict_types=1);
 
-namespace DesignPatterns\StrategyPattern\Behaviour\Quacks;
+namespace DesignPatterns\StrategyPattern\Behaviour\Quack;
 
 interface QuackBehaviourInterface
 {
