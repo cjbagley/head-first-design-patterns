@@ -18,12 +18,13 @@
     }
   },
   "require-dev": {
-    "phpunit/phpunit": "^11.5",
+    "phpunit/phpunit": "^12.0",
     "phpstan/phpstan": "^2.1",
     "rector/rector": "^2.0"
   },
   "scripts": {
     "rector": "./vendor/bin/rector",
-    "stan": "./vendor/bin/phpstan --memory-limit=2G"
+    "stan": "./vendor/bin/phpstan --memory-limit=2G",
+    "test": "./vendor/bin/phpunit"
   }
 }
