@@ -24,4 +24,14 @@ abstract class AbstractDuck implements QuackBehaviourInterface
     {
         return $this->flyBehaviour->fly();
     }
+
+    public function setQuackBehaviour(QuackBehaviourInterface $quackBehaviour): void
+    {
+        $this->quackBehaviour = $quackBehaviour;
+    }
+
+    public function setFlyBehaviour(FlyBehaviourInterface $flyBehaviour): void
+    {
+        $this->flyBehaviour = $flyBehaviour;
+    }
 }
