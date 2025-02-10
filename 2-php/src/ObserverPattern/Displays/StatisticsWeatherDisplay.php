@@ -2,13 +2,13 @@
 
 namespace DesignPatterns\ObserverPattern\Displays;
 
-use DesignPatterns\ObserverPattern\Data\WeatherDataDTO;
-
 class StatisticsWeatherDisplay extends WeatherDisplay
 {
-    public function getDisplayString(WeatherDataDTO $data): string
+    public function update(string $message): void
     {
-        return sprintf('Stats: %sF | %s%% | %sP',
+        $data = json_decode($message);
+
+        echo sprintf('Stats: %sF | %s%% | %sP',
             $data->temperature,
             $data->humidity,
             $data->pressure,

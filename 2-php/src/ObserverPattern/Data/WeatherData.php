@@ -2,35 +2,24 @@
 
 namespace DesignPatterns\ObserverPattern\Data;
 
-use DesignPatterns\ObserverPattern\Displays\CurrentConditionWeatherDisplay;
-use DesignPatterns\ObserverPattern\Displays\ForecastWeatherDisplay;
-use DesignPatterns\ObserverPattern\Displays\StatisticsWeatherDisplay;
+use DesignPatterns\ObserverPattern\Displays\ObserverInterface;
+use SplObjectStorage;
 
-class WeatherData
+class WeatherData implements SubjectInterface
 {
+    private SplObjectStorage $observers;
+
     public function __construct(
         private float $temperature,
         private float $humidity,
         private float $pressure,
     ) {
-        $this->measurementsChange();
+        $this->observers = new SplObjectStorage();
     }
 
-    public function measurementsChange(): void
+    private function measurementsChange(): void
     {
-        $currentConditionDisplay = new CurrentConditionWeatherDisplay();
-        $statisticsDisplay = new StatisticsWeatherDisplay();
-        $forecastDisplay = new ForecastWeatherDisplay();
-        $data = WeatherDataDTO::create($this->temperature, $this->humidity, $this->pressure);
-
-        $currentConditionDisplay->update($data);
-        $statisticsDisplay->update($data);
-        $forecastDisplay->update($data);
-    }
-
-    public function getTemperature(): float
-    {
-        return $this->temperature;
+        $this->notifyObservers();
     }
 
     public function setTemperature(float $temperature): void
@@ -39,25 +28,38 @@ class WeatherData
         $this->measurementsChange();
     }
 
-    public function getHumidity(): float
-    {
-        return $this->humidity;
-    }
-
     public function setHumidity(float $humidity): void
     {
         $this->humidity = $humidity;
         $this->measurementsChange();
     }
 
-    public function getPressure(): float
-    {
-        return $this->pressure;
-    }
-
     public function setPressure(float $pressure): void
     {
         $this->pressure = $pressure;
         $this->measurementsChange();
+    }
+
+    public function registerObserver(ObserverInterface $observer): void
+    {
+        $this->observers->attach($observer);
+    }
+
+    public function removeObserver(ObserverInterface $observer): void
+    {
+        $this->observers->detach($observer);
+    }
+
+    public function notifyObservers(): void
+    {
+        $message = json_encode([
+            'temperature' => $this->temperature,
+            'humidity' => $this->humidity,
+            'pressure' => $this->pressure,
+        ]);
+
+        foreach ($this->observers as $observer) {
+            $observer->update($message);
+        }
     }
 }
