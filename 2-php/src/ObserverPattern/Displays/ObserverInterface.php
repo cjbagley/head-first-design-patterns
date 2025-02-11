@@ -2,7 +2,9 @@
 
 namespace DesignPatterns\ObserverPattern\Displays;
 
+use DesignPatterns\ObserverPattern\Data\WeatherDataDTO;
+
 interface ObserverInterface
 {
-    public function update(string $message): void;
+    public function update(WeatherDataDTO $data): void;
 }

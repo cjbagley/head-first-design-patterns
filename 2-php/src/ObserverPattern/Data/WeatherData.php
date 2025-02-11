@@ -7,7 +7,10 @@ use SplObjectStorage;
 
 class WeatherData implements SubjectInterface
 {
-    private SplObjectStorage $observers;
+    /**
+     * @var SplObjectStorage<ObserverInterface, null> $observers
+     */
+    private readonly SplObjectStorage $observers;
 
     public function __construct(
         private float $temperature,
@@ -52,14 +55,14 @@ class WeatherData implements SubjectInterface
 
     public function notifyObservers(): void
     {
-        $message = json_encode([
-            'temperature' => $this->temperature,
-            'humidity' => $this->humidity,
-            'pressure' => $this->pressure,
-        ]);
+        $data = WeatherDataDTO::create(
+            temperature: $this->temperature,
+            humidity: $this->humidity,
+            pressure: $this->pressure,
+        );
 
         foreach ($this->observers as $observer) {
-            $observer->update($message);
+            $observer->update($data);
         }
     }
 }

@@ -2,12 +2,12 @@
 
 namespace DesignPatterns\ObserverPattern\Displays;
 
+use DesignPatterns\ObserverPattern\Data\WeatherDataDTO;
+
 class ForecastWeatherDisplay extends WeatherDisplay
 {
-    public function update(string $message): void
+    public function update(WeatherDataDTO $data): void
     {
-        $data = json_decode($message);
-
         echo sprintf('Forecast: Temp. %sF with %s%% humidity',
             $data->temperature,
             $data->humidity
