@@ -4,15 +4,15 @@ namespace DesignPatterns\DecoratorPattern\Beverages;
 
 use DesignPatterns\DecoratorPattern\Beverages\BeverageInterface;
 
-class Espresso implements BeverageInterface
+class HouseBlend implements BeverageInterface
 {
     public function getDescription(): string
     {
-        return 'Espresso';
+        return 'House Blend';
     }
 
     public function getCost(): int
     {
-        return 199;
+        return 89;
     }
 }
