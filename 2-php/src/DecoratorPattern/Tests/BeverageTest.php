@@ -25,9 +25,12 @@ class BeverageTest extends TestCase
         yield [new Decaf(), 'Decaf', 105];
         yield [new Mocha(new DarkRoast()), 'Dark Roast - Mocha', 119];
         $houseBlend = new HouseBlend();
-        $houseBlendWithToppingOne = new SteamedMilk($houseBlend);
-        $houseBlendWithToppingTwo = new Whip($houseBlendWithToppingOne);
-        yield [$houseBlendWithToppingTwo, 'House Blend - Steamed Milk - Whip', 109];
+        $houseBlend = new SteamedMilk($houseBlend);
+        $houseBlend = new Whip($houseBlend);
+        yield [$houseBlend, 'House Blend - Steamed Milk - Whip', 109];
+        $decaf = new Decaf();
+        $decaf = new Mocha($decaf);
+        yield [$decaf, 'Decaf - Mocha', 125];
     }
 
     #[Test]
