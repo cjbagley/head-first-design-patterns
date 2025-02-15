@@ -8,7 +8,8 @@ class StatisticsWeatherDisplay extends WeatherDisplay
 {
     public function update(WeatherDataDTO $data): void
     {
-        echo sprintf('Stats: %sF | %s%% | %sP',
+        echo sprintf(
+            'Stats: %sF | %s%% | %sP',
             $data->temperature,
             $data->humidity,
             $data->pressure,

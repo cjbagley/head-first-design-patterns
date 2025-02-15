@@ -15,7 +15,7 @@ class PizzaFactoryTest extends TestCase
 
     protected function setUp(): void
     {
-        $this->pizzaStore = new PizzaStore(new PizzaFactory);
+        $this->pizzaStore = new PizzaStore(new PizzaFactory());
     }
 
     public static function dataProvider(): Generator
@@ -31,6 +31,6 @@ class PizzaFactoryTest extends TestCase
     public function it_creates_correct_pizza(string $order): void
     {
         $pizza = $this->pizzaStore->orderPizza($order);
-        Self::assertStringContainsString($order, strtolower($pizza->getDescription()));
+        self::assertStringContainsString($order, strtolower($pizza->getDescription()));
     }
 }

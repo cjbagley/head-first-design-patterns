@@ -8,7 +8,8 @@ class ForecastWeatherDisplay extends WeatherDisplay
 {
     public function update(WeatherDataDTO $data): void
     {
-        echo sprintf('Forecast: Temp. %sF with %s%% humidity',
+        echo sprintf(
+            'Forecast: Temp. %sF with %s%% humidity',
             $data->temperature,
             $data->humidity
         );

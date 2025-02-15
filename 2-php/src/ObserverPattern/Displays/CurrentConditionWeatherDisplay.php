@@ -8,7 +8,8 @@ class CurrentConditionWeatherDisplay extends WeatherDisplay
 {
     public function update(WeatherDataDTO $data): void
     {
-        echo sprintf('Current conditions: Temperature %sF, Humidity %s%%',
+        echo sprintf(
+            'Current conditions: Temperature %sF, Humidity %s%%',
             $data->temperature,
             $data->humidity
         );
