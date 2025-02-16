@@ -1,5 +1,7 @@
 <?php
 
+declare(strict_types=1);
+
 namespace DesignPatterns\SimpleFactoryPattern\Tests;
 
 use DesignPatterns\SimpleFactoryPattern\PizzaFactory;
@@ -9,7 +11,7 @@ use PHPUnit\Framework\Attributes\DataProvider;
 use PHPUnit\Framework\Attributes\Test;
 use PHPUnit\Framework\TestCase;
 
-class PizzaFactoryTest extends TestCase
+final class PizzaFactoryTest extends TestCase
 {
     private PizzaStore $pizzaStore;
 

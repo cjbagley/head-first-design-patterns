@@ -1,5 +1,7 @@
 <?php
 
+declare(strict_types=1);
+
 namespace DesignPatterns\SimpleFactoryPattern\Pizza;
 
 abstract class AbstractPizza implements PizzaInterface

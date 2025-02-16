@@ -26,6 +26,7 @@
   "scripts": {
     "rector": "./vendor/bin/rector",
     "stan": "./vendor/bin/phpstan --memory-limit=2G",
-    "test": "./vendor/bin/phpunit"
+    "test": "./vendor/bin/phpunit",
+    "fix": "./vendor/bin/php-cs-fixer fix --allow-risky=yes"
   }
 }
