@@ -33,7 +33,7 @@ final class NYStoreTest extends TestCase
     public function it_creates_correct_pizza(string $order): void
     {
         $pizza = $this->pizzaStore->orderPizza($order);
-        self::assertStringContainsString('new york style', strtolower($pizza->getDescription()));
-        self::assertStringContainsString(strtolower($order), strtolower($pizza->getDescription()));
+        self::assertStringContainsString('new york style', strtolower($pizza->getName()));
+        self::assertStringContainsString(strtolower($order), strtolower($pizza->getName()));
     }
 }

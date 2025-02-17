@@ -4,12 +4,13 @@ declare(strict_types=1);
 
 namespace DesignPatterns\FactoryPattern\Pizza;
 
-use DesignPatterns\FactoryPattern\Pizza\PizzaInterface;
-
-final class ChicagoStylePepperoniPizza extends AbstractPizza
+final class ChicagoStylePepperoniPizza extends AbstractChicagoStylePizza
 {
-    public function getDescription(): string
+    public function __construct()
     {
-        return 'Chicago Style Pepperoni Pizza';
+        $this->name = 'Chicago Style Pepperoni Pizza';
+        $this->dough = 'Extra Thick Crust Dough';
+        $this->sauce = 'Plum Tomato Sauce';
+        $this->toppings = ['Shredded Mozzarella Cheese', 'Pepperoni'];
     }
 }
