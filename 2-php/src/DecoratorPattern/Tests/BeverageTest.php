@@ -17,6 +17,9 @@ use PHPUnit\Framework\TestCase;
 
 class BeverageTest extends TestCase
 {
+    /**
+     * @return \Iterator<array<array<int, mixed>, mixed>>
+     */
     public static function dataProvider(): Iterator
     {
         yield [new Espresso(), 'Espresso', 199];

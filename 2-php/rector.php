@@ -2,40 +2,22 @@
 
 declare(strict_types=1);
 
-use Rector\CodeQuality\Rector\Array_\CallableThisArrayToAnonymousFunctionRector;
-use Rector\CodeQuality\Rector\Class_\InlineConstructorDefaultToPropertyRector;
-use Rector\CodingStyle\Rector\ArrowFunction\StaticArrowFunctionRector;
-use Rector\CodingStyle\Rector\Closure\StaticClosureRector;
 use Rector\Config\RectorConfig;
-use Rector\Php70\Rector\StaticCall\StaticCallOnNonStaticToInstanceCallRector;
-use Rector\Php74\Rector\Closure\ClosureToArrowFunctionRector;
-use Rector\Php81\Rector\Array_\FirstClassCallableRector;
-use Rector\Set\ValueObject\LevelSetList;
-use Rector\Set\ValueObject\SetList;
 
-return static function (RectorConfig $rectorConfig): void {
-    $rectorConfig->paths([
+return RectorConfig::configure()
+    ->withRootFiles()
+    ->withPaths([
         __DIR__.'/src',
-    ]);
-
-//    $rectorConfig->skip([
-//        StaticCallOnNonStaticToInstanceCallRector::class,
-//        FirstClassCallableRector::class,
-//        ClosureToArrowFunctionRector::class,
-//        CallableThisArrayToAnonymousFunctionRector::class,
-//        StaticClosureRector::class,
-//        StaticArrowFunctionRector::class,
-//    ]);
-
-    // register a single rule
-    // $rectorConfig->rule(InlineConstructorDefaultToPropertyRector::class);
-
-    //define sets of rules
-    $rectorConfig->sets([
-        LevelSetList::UP_TO_PHP_83,
-        SetList::CODE_QUALITY,
-        SetList::CODING_STYLE,
-        SetList::DEAD_CODE,
-        SetList::EARLY_RETURN,
-    ]);
-};
+    ])
+    ->withPhpSets()
+    ->withComposerBased(
+        phpunit: true,
+    )
+    ->withCodeQualityLevel(10)
+    ->withCodingStyleLevel(10)
+    ->withDeadCodeLevel(10)
+    ->withTypeCoverageLevel(10)
+    ->withTypeCoverageDocblockLevel(10)
+    ->withAttributesSets(
+        phpunit: true,
+    );

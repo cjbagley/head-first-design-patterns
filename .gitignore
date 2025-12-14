@@ -97,3 +97,6 @@ vendor/
 
 .php-cs-fixer.php
 .php-cs-fixer.cache
+
+
+.DS_Store

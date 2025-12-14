@@ -20,6 +20,9 @@ final class NYStoreTest extends TestCase
         $this->pizzaStore = new NYPizzaStore();
     }
 
+    /**
+     * @return \Generator<array<int, string>>
+     */
     public static function dataProvider(): Generator
     {
         yield ['margarita'];
