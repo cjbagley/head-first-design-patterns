@@ -13,13 +13,13 @@ class DuckChangeBehaviourTest extends TestCase
     {
         // Original
         $mallard = new MallardDuck();
-        self::assertSame('quack', $mallard->quack());
-        self::assertStringContainsString('fly with wings', $mallard->fly());
+        self::assertSame('quack', $mallard->performQuack());
+        self::assertStringContainsString('fly with wings', $mallard->performFly());
 
         // Changed
         $mallard->setQuackBehaviour(new Squeak());
-        self::assertSame('squeak', $mallard->quack());
+        self::assertSame('squeak', $mallard->performQuack());
         $mallard->setFlyBehaviour(new FlyWithRocket());
-        self::assertStringContainsString('fly with a rocket', $mallard->fly());
+        self::assertStringContainsString('fly with a rocket', $mallard->performFly());
     }
 }

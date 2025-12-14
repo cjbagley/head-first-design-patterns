@@ -30,6 +30,6 @@ class DuckFlyTest extends TestCase
     #[DataProvider('dataProvider')]
     public function test_fly_behaviour(AbstractDuck $duck, string $expected): void
     {
-        self::assertStringContainsString($expected, $duck->fly());
+        self::assertStringContainsString($expected, $duck->performFly());
     }
 }

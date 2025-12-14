@@ -30,6 +30,6 @@ class DuckQuackTest extends TestCase
     #[DataProvider('dataProvider')]
     public function test_quack_behaviour(AbstractDuck $duck, string $expected): void
     {
-        self::assertSame($duck->quack(), $expected);
+        self::assertSame($duck->performQuack(), $expected);
     }
 }
