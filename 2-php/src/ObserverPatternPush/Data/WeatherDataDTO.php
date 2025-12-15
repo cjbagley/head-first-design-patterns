@@ -1,6 +1,6 @@
 <?php
 
-namespace DesignPatterns\ObserverPattern\Data;
+namespace DesignPatterns\ObserverPatternPush\Data;
 
 readonly class WeatherDataDTO
 {

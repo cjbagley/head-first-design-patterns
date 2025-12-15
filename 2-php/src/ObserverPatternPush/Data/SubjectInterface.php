@@ -1,8 +1,8 @@
 <?php
 
-namespace DesignPatterns\ObserverPattern\Data;
+namespace DesignPatterns\ObserverPatternPush\Data;
 
-use DesignPatterns\ObserverPattern\Displays\ObserverInterface;
+use DesignPatterns\ObserverPatternPush\Displays\ObserverInterface;
 
 interface SubjectInterface
 {
