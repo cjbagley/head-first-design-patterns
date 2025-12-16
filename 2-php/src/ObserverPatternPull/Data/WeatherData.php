@@ -1,0 +1,77 @@
+<?php
+
+namespace DesignPatterns\ObserverPatternPull\Data;
+
+use DesignPatterns\ObserverPatternPull\Displays\ObserverInterface;
+use SplObjectStorage;
+
+class WeatherData implements SubjectInterface
+{
+    /**
+     * @var SplObjectStorage<ObserverInterface, null> $observers
+     */
+    private readonly SplObjectStorage $observers;
+
+    public function __construct(
+        private float $temperature,
+        private float $humidity,
+        private float $pressure,
+    ) {
+        $this->observers = new SplObjectStorage();
+    }
+
+    private function measurementsChange(): void
+    {
+        $this->notifyObservers();
+    }
+
+    public function getTemperature(): float
+    {
+        return $this->temperature;
+    }
+
+    public function setTemperature(float $temperature): void
+    {
+        $this->temperature = $temperature;
+        $this->measurementsChange();
+    }
+
+    public function getHumidity(): float
+    {
+        return $this->humidity;
+    }
+
+    public function setHumidity(float $humidity): void
+    {
+        $this->humidity = $humidity;
+        $this->measurementsChange();
+    }
+
+    public function getPressure(): float
+    {
+        return $this->pressure;
+    }
+
+    public function setPressure(float $pressure): void
+    {
+        $this->pressure = $pressure;
+        $this->measurementsChange();
+    }
+
+    public function registerObserver(ObserverInterface $observer): void
+    {
+        $this->observers->attach($observer);
+    }
+
+    public function removeObserver(ObserverInterface $observer): void
+    {
+        $this->observers->detach($observer);
+    }
+
+    public function notifyObservers(): void
+    {
+        foreach ($this->observers as $observer) {
+            $observer->update();
+        }
+    }
+}
