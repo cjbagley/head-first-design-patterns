@@ -2,7 +2,7 @@
 
 namespace DesignPatterns\DecoratorPattern\Condiments;
 
-class Whip extends CondimentDecoratorInterface
+class Whip extends CondimentDecorator
 {
     public function getDescription(): string
     {

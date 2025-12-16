@@ -2,7 +2,7 @@
 
 namespace DesignPatterns\DecoratorPattern\Condiments;
 
-class Mocha extends CondimentDecoratorInterface
+class Mocha extends CondimentDecorator
 {
     public function getDescription(): string
     {

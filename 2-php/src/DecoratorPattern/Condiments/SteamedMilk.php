@@ -2,7 +2,7 @@
 
 namespace DesignPatterns\DecoratorPattern\Condiments;
 
-class SteamedMilk extends CondimentDecoratorInterface
+class SteamedMilk extends CondimentDecorator
 {
     public function getDescription(): string
     {

@@ -2,7 +2,7 @@
 
 namespace DesignPatterns\DecoratorPattern\Condiments;
 
-class Soy extends CondimentDecoratorInterface
+class Soy extends CondimentDecorator
 {
     public function getDescription(): string
     {
