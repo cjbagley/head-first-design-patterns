@@ -4,6 +4,10 @@ declare(strict_types=1);
 
 namespace DesignPatterns\FactoryPattern\Tests;
 
+use DesignPatterns\FactoryPattern\Pizza\ChicagoStyleClamPizza;
+use DesignPatterns\FactoryPattern\Pizza\ChicagoStyleMargaritaPizza;
+use DesignPatterns\FactoryPattern\Pizza\ChicagoStylePepperoniPizza;
+use DesignPatterns\FactoryPattern\Pizza\ChicagoStyleVeggiePizza;
 use DesignPatterns\FactoryPattern\Store\AbstractPizzaStore;
 use DesignPatterns\FactoryPattern\Store\ChicagoPizzaStore;
 use Generator;
@@ -25,17 +29,18 @@ final class ChicagoStoreTest extends TestCase
      */
     public static function dataProvider(): Generator
     {
-        yield ['margarita'];
-        yield ['pepperoni'];
-        yield ['veggie'];
-        yield ['clam'];
+        yield ['margarita', ChicagoStyleMargaritaPizza::class];
+        yield ['pepperoni', ChicagoStylePepperoniPizza::class];
+        yield ['veggie', ChicagoStyleVeggiePizza::class];
+        yield ['clam', ChicagoStyleClamPizza::class];
     }
 
     #[DataProvider('dataProvider')]
     #[Test]
-    public function it_creates_correct_pizza(string $order): void
+    public function it_creates_correct_pizza(string $order, string $expectedClass): void
     {
         $pizza = $this->pizzaStore->orderPizza($order);
+        self::assertInstanceOf($expectedClass, $pizza);
         self::assertStringContainsString('chicago', strtolower($pizza->getName()));
         self::assertStringContainsString(strtolower($order), strtolower($pizza->getName()));
     }
