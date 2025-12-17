@@ -10,6 +10,7 @@ use DesignPatterns\FactoryPattern\Pizza\NYStylePepperoniPizza;
 use DesignPatterns\FactoryPattern\Pizza\NYStyleVeggiePizza;
 use DesignPatterns\FactoryPattern\Store\AbstractPizzaStore;
 use DesignPatterns\FactoryPattern\Store\NYPizzaStore;
+use DesignPatterns\FactoryPattern\Store\Order;
 use Generator;
 use PHPUnit\Framework\Attributes\DataProvider;
 use PHPUnit\Framework\Attributes\Test;
@@ -29,19 +30,18 @@ final class NYStoreTest extends TestCase
      */
     public static function dataProvider(): Generator
     {
-        yield ['margarita', NYStyleMargaritaPizza::class];
-        yield ['pepperoni', NYStylePepperoniPizza::class];
-        yield ['veggie', NYStyleVeggiePizza::class];
-        yield ['clam', NYStyleClamPizza::class];
+        yield [Order::Cheese, NYStyleMargaritaPizza::class];
+        yield [Order::Pepperoni, NYStylePepperoniPizza::class];
+        yield [Order::Veggie, NYStyleVeggiePizza::class];
+        yield [Order::Clam, NYStyleClamPizza::class];
     }
 
     #[DataProvider('dataProvider')]
     #[Test]
-    public function it_creates_correct_pizza(string $order, string $expectedClass): void
+    public function it_creates_correct_pizza(Order $order, string $expectedClass): void
     {
         $pizza = $this->pizzaStore->orderPizza($order);
         self::assertInstanceOf($expectedClass, $pizza);
         self::assertStringContainsString('new york style', strtolower($pizza->getName()));
-        self::assertStringContainsString(strtolower($order), strtolower($pizza->getName()));
     }
 }

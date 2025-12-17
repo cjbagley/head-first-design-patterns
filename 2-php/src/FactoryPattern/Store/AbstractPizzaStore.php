@@ -8,7 +8,7 @@ use DesignPatterns\FactoryPattern\Pizza\AbstractPizza;
 
 abstract class AbstractPizzaStore
 {
-    public function orderPizza(string $order): AbstractPizza
+    public function orderPizza(Order $order): AbstractPizza
     {
         $pizza = $this->createPizza($order);
         $pizza->prepare();
@@ -19,5 +19,5 @@ abstract class AbstractPizzaStore
         return $pizza;
     }
 
-    abstract protected function createPizza(string $order): AbstractPizza;
+    abstract protected function createPizza(Order $order): AbstractPizza;
 }
