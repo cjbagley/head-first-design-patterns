@@ -1,5 +1,7 @@
 <?php
 
+declare(strict_types=1);
+
 namespace DesignPatterns\ObserverPatternPush\Data;
 
 use DesignPatterns\ObserverPatternPush\Displays\ObserverInterface;

@@ -1,5 +1,7 @@
 <?php
 
+declare(strict_types=1);
+
 namespace DesignPatterns\ObserverPatternPush\Tests;
 
 use DesignPatterns\ObserverPatternPush\Data\WeatherData;

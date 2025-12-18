@@ -1,5 +1,7 @@
 <?php
 
+declare(strict_types=1);
+
 namespace DesignPatterns\DecoratorPatternExpanded\Beverages;
 
 use DesignPatterns\DecoratorPatternExpanded\Size;

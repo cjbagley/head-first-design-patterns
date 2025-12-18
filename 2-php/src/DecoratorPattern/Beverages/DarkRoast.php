@@ -1,8 +1,8 @@
 <?php
 
-namespace DesignPatterns\DecoratorPattern\Beverages;
+declare(strict_types=1);
 
-use DesignPatterns\DecoratorPattern\Beverages\BeverageInterface;
+namespace DesignPatterns\DecoratorPattern\Beverages;
 
 class DarkRoast implements BeverageInterface
 {

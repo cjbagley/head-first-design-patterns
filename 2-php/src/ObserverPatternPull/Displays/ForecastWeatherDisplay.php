@@ -1,5 +1,7 @@
 <?php
 
+declare(strict_types=1);
+
 namespace DesignPatterns\ObserverPatternPull\Displays;
 
 class ForecastWeatherDisplay extends WeatherDisplay

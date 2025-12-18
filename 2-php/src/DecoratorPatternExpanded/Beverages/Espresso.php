@@ -1,8 +1,9 @@
 <?php
 
+declare(strict_types=1);
+
 namespace DesignPatterns\DecoratorPatternExpanded\Beverages;
 
-use DesignPatterns\DecoratorPatternExpanded\Beverages\Beverage;
 use DesignPatterns\DecoratorPatternExpanded\Size;
 
 class Espresso extends Beverage

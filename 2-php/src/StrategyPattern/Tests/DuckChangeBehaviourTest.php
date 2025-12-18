@@ -1,5 +1,7 @@
 <?php
 
+declare(strict_types=1);
+
 use DesignPatterns\StrategyPattern\Behaviour\Fly\FlyWithRocket;
 use DesignPatterns\StrategyPattern\Behaviour\Quack\Squeak;
 use DesignPatterns\StrategyPattern\Ducks\MallardDuck;

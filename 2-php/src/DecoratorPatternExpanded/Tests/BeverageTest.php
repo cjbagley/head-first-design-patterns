@@ -1,5 +1,7 @@
 <?php
 
+declare(strict_types=1);
+
 namespace DesignPatterns\DecoratorPatternExpanded\Tests;
 
 use DesignPatterns\DecoratorPatternExpanded\Beverages\Beverage;

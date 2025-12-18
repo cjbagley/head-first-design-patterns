@@ -1,5 +1,7 @@
 <?php
 
+declare(strict_types=1);
+
 namespace DesignPatterns\FactoryPattern\Store;
 
 use DesignPatterns\FactoryPattern\Pizza\AbstractPizza;

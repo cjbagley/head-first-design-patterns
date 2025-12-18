@@ -1,8 +1,8 @@
 <?php
 
-namespace DesignPatterns\FactoryPattern\Pizza;
+declare(strict_types=1);
 
-use DesignPatterns\FactoryPattern\Pizza\AbstractPizza;
+namespace DesignPatterns\FactoryPattern\Pizza;
 
 abstract class AbstractChicagoStylePizza extends AbstractPizza
 {
