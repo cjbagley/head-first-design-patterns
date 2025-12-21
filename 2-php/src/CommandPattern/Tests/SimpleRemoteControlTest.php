@@ -11,7 +11,7 @@ use DesignPatterns\CommandPattern\Command\GarageDoorOpenCommand;
 use DesignPatterns\CommandPattern\Command\LightOffCommand;
 use DesignPatterns\CommandPattern\Command\LightOnCommand;
 use DesignPatterns\CommandPattern\Command\StereoOffCommand;
-use DesignPatterns\CommandPattern\Command\StereoOnCommand;
+use DesignPatterns\CommandPattern\Command\StereoOnForCDCommand;
 use DesignPatterns\CommandPattern\SimpleRemoteControl;
 use DesignPatterns\CommandPattern\Vendor\CeilingFan;
 use DesignPatterns\CommandPattern\Vendor\GarageDoor;
@@ -34,7 +34,7 @@ class SimpleRemoteControlTest extends TestCase
         yield [GarageDoor::class, GarageDoorCloseCommand::class, ['down']];
         yield [CeilingFan::class, CeilingFanOnCommand::class, ['high']];
         yield [CeilingFan::class, CeilingFanOffCommand::class, ['off']];
-        yield [Stereo::class, StereoOnCommand::class, ['on']];
+        yield [Stereo::class, StereoOnForCDCommand::class, ['on', 'setCD', 'setVolume']];
         yield [Stereo::class, StereoOffCommand::class, ['off']];
     }
 

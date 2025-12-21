@@ -6,7 +6,7 @@ namespace DesignPatterns\CommandPattern\Command;
 
 use DesignPatterns\CommandPattern\Vendor\Stereo;
 
-readonly class StereoOnCommand implements CommandInterface
+readonly class StereoOnForCDCommand implements CommandInterface
 {
     public function __construct(private readonly Stereo $stereo)
     {
@@ -15,5 +15,7 @@ readonly class StereoOnCommand implements CommandInterface
     public function execute(): void
     {
         $this->stereo->on();
+        $this->stereo->setCD();
+        $this->stereo->setVolume(11);
     }
 }
