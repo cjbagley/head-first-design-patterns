@@ -6,7 +6,7 @@ namespace DesignPatterns\CommandPattern\Command;
 
 use DesignPatterns\CommandPattern\Vendor\Light;
 
-readonly class LightOnCommand implements CommandInterface
+readonly class LightOffCommand implements CommandInterface
 {
     public function __construct(private readonly Light $light)
     {
@@ -14,6 +14,6 @@ readonly class LightOnCommand implements CommandInterface
 
     public function execute(): void
     {
-        $this->light->on();
+        $this->light->off();
     }
 }

@@ -1,0 +1,19 @@
+<?php
+
+declare(strict_types=1);
+
+namespace DesignPatterns\CommandPattern\Command;
+
+use DesignPatterns\CommandPattern\Vendor\Stereo;
+
+readonly class StereoOffCommand implements CommandInterface
+{
+    public function __construct(private readonly Stereo $stereo)
+    {
+    }
+
+    public function execute(): void
+    {
+        $this->stereo->off();
+    }
+}
