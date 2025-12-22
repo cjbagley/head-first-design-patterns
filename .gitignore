@@ -86,17 +86,14 @@ venv.bak/
 vendor/
 .phpunit.result.cache
 
-
-.env
 .env.local
 .env.local.php
 .env.*.local
 config/secrets/prod/prod.decrypt.private.php
-var/
-vendor/
 
 .php-cs-fixer.php
 .php-cs-fixer.cache
 .php-cs-fixer.dist.php
 
 .DS_Store
+!2-php/src/CommandPattern/Vendor/
