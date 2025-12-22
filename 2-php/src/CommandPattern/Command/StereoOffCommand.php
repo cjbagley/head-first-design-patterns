@@ -16,4 +16,9 @@ readonly class StereoOffCommand implements CommandInterface
     {
         $this->stereo->off();
     }
+
+    public function undo(): void
+    {
+        $this->stereo->on();
+    }
 }

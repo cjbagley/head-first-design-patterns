@@ -14,4 +14,9 @@ readonly class NoCommand implements CommandInterface
     {
         // Does nothing
     }
+
+    public function undo(): void
+    {
+        // Does nothing
+    }
 }

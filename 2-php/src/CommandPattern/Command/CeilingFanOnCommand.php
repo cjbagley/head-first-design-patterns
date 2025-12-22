@@ -16,4 +16,9 @@ readonly class CeilingFanOnCommand implements CommandInterface
     {
         $this->ceilingFan->high();
     }
+
+    public function undo(): void
+    {
+        $this->ceilingFan->off();
+    }
 }

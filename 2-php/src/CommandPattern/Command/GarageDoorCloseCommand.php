@@ -16,4 +16,9 @@ readonly class GarageDoorCloseCommand implements CommandInterface
     {
         $this->garageDoor->down();
     }
+
+    public function undo(): void
+    {
+        $this->garageDoor->up();
+    }
 }

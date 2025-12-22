@@ -18,4 +18,9 @@ readonly class StereoOnForCDCommand implements CommandInterface
         $this->stereo->setCD();
         $this->stereo->setVolume(11);
     }
+
+    public function undo(): void
+    {
+        $this->stereo->off();
+    }
 }

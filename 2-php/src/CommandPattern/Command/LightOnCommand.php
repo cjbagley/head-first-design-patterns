@@ -16,4 +16,9 @@ readonly class LightOnCommand implements CommandInterface
     {
         $this->light->on();
     }
+
+    public function undo(): void
+    {
+        $this->light->off();
+    }
 }
