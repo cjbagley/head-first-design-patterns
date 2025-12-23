@@ -6,7 +6,6 @@ namespace DesignPatterns\AdapterPattern\Simple;
 
 class WildTurkey implements TurkeyInterface
 {
-
     public function gobble(): string
     {
         return 'Gobble gobble';

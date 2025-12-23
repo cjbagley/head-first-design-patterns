@@ -13,7 +13,7 @@ class TurkeyAdaptorTest extends TestCase
     public function it_handles_duck_quack(): void
     {
         $turkeyMock = $this->createMock(TurkeyInterface::class);
-        
+
         $turkeyMock->expects($this->once())
             ->method('gobble')
             ->willReturn('Gobble gobble');
@@ -27,7 +27,7 @@ class TurkeyAdaptorTest extends TestCase
     public function it_handles_duck_fly(): void
     {
         $turkeyMock = $this->createMock(TurkeyInterface::class);
-        
+
         $turkeyMock->expects($this->exactly(5))
             ->method('fly')
             ->willReturn('flap');
@@ -45,7 +45,7 @@ class TurkeyAdaptorTest extends TestCase
         $adapter = new TurkeyAdaptor($wildTurkey);
 
         $this->assertSame('Gobble gobble', $adapter->quack());
-        
+
         $expectedFly = trim(str_repeat('flap ', 5));
         $this->assertSame($expectedFly, $adapter->fly());
     }
