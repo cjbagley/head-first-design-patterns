@@ -6,7 +6,7 @@
          failOnWarning="true">
     <testsuites>
         <testsuite name="default">
-            <directory>src/*/tests</directory>
+            <directory suffix="Test.php">src</directory>
         </testsuite>
     </testsuites>
 
