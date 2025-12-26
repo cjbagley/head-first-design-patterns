@@ -6,7 +6,7 @@ namespace DesignPatterns\TemplateMethodPattern;
 
 abstract class CaffeineBeverage
 {
-    public function prepareRecipe(): string
+    final public function prepareRecipe(): string
     {
         return implode("\n", [
             $this->boilWater(),
