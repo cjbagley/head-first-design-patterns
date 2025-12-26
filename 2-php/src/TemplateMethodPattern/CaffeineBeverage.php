@@ -8,12 +8,21 @@ abstract class CaffeineBeverage
 {
     final public function prepareRecipe(): string
     {
-        return implode("\n", [
+        return implode("\n", array_filter([
+            $this->getAdditionalInformation(),
             $this->boilWater(),
             $this->brew(),
             $this->pourIntoCup(),
             $this->addCondiments(),
-        ]);
+        ]));
+    }
+
+    /**
+     * Hook example - subclasses can implement their own version if required
+     */
+    protected function getAdditionalInformation(): string
+    {
+        return '';
     }
 
     abstract protected function brew(): string;
