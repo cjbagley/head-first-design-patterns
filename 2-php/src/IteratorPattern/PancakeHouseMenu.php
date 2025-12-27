@@ -1,0 +1,42 @@
+<?php
+
+declare(strict_types=1);
+
+namespace DesignPatterns\IteratorPattern;
+
+use DesignPatterns\IteratorPattern\MenuIterator\MenuIteratorInterface;
+use DesignPatterns\IteratorPattern\MenuIterator\PancakeHouseMenuIterator;
+use SplObjectStorage;
+
+readonly class PancakeHouseMenu
+{
+    /**
+     * @var SplObjectStorage<MenuItem>
+     */
+    private SplObjectStorage $menuItems;
+
+    public function __construct()
+    {
+        $this->menuItems = new SplObjectStorage();
+
+        $this->addItem("K&B's Pancake Breakfast", 'Pancakes with scrambled eggs, and toast', true, 2.99);
+        $this->addItem('Regular Pancake Breakfast', 'Pancakes with fried eggs, sausage', false, 2.99);
+        $this->addItem('Blueberry Pancakes', 'Pancakes made with fresh blueberries', true, 3.49);
+        $this->addItem('Waffles', 'Waffles, with your choice of blueberries or strawberries', true, 3.59);
+    }
+
+    public function addItem(
+        string $name,
+        string $description,
+        bool $vegetarian,
+        float $price
+    ): void {
+        $menuItem = new MenuItem($name, $description, $vegetarian, $price);
+        $this->menuItems->attach($menuItem);
+    }
+
+    public function createIterator(): MenuIteratorInterface
+    {
+        return new PancakeHouseMenuIterator($this->menuItems);
+    }
+}
