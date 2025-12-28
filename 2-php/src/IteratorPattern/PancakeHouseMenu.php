@@ -8,7 +8,7 @@ use DesignPatterns\IteratorPattern\MenuIterator\MenuIteratorInterface;
 use DesignPatterns\IteratorPattern\MenuIterator\PancakeHouseMenuIterator;
 use SplObjectStorage;
 
-readonly class PancakeHouseMenu
+readonly class PancakeHouseMenu implements MenuInterface
 {
     /**
      * @var SplObjectStorage<MenuItem>

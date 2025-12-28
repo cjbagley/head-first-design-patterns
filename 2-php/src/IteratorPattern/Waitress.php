@@ -9,8 +9,8 @@ use DesignPatterns\IteratorPattern\MenuIterator\MenuIteratorInterface;
 readonly class Waitress
 {
     public function __construct(
-        private PancakeHouseMenu $pancakeHouseMenu,
-        private DinerMenu $dinerMenu
+        private MenuInterface $pancakeHouseMenu,
+        private MenuInterface $dinerMenu
     ) {
     }
 

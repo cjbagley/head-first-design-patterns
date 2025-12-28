@@ -8,7 +8,7 @@ use DesignPatterns\IteratorPattern\MenuIterator\DinerMenuIterator;
 use DesignPatterns\IteratorPattern\MenuIterator\MenuIteratorInterface;
 use Exception;
 
-class DinerMenu
+class DinerMenu implements MenuInterface
 {
     private const int MAX_ITEMS = 6;
 
