@@ -10,7 +10,8 @@ readonly class Waitress
 {
     public function __construct(
         private MenuInterface $pancakeHouseMenu,
-        private MenuInterface $dinerMenu
+        private MenuInterface $dinerMenu,
+        private MenuInterface $cafeMenu,
     ) {
     }
 
@@ -18,11 +19,13 @@ readonly class Waitress
     {
         $pancakeIterator = $this->pancakeHouseMenu->createIterator();
         $dinerIterator = $this->dinerMenu->createIterator();
+        $cafeIterator = $this->cafeMenu->createIterator();
 
         return sprintf(
-            "Menu\n----\nBREAKFAST\n%s\nLUNCH\n%s",
+            "Menu\n----\nBREAKFAST\n%s\nLUNCH\n%s\nDINNER\n%s",
             $this->printMenuSubSection($pancakeIterator),
-            $this->printMenuSubSection($dinerIterator)
+            $this->printMenuSubSection($dinerIterator),
+            $this->printMenuSubSection($cafeIterator)
         );
     }
 
