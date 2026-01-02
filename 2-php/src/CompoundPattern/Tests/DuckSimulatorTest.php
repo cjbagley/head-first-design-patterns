@@ -4,7 +4,7 @@ declare(strict_types=1);
 
 namespace DesignPatterns\CompoundPattern\Tests;
 
-use DesignPatterns\CompoundPattern\Decorators\QuackCounter;
+use DesignPatterns\CompoundPattern\Decorator\QuackCounter;
 use DesignPatterns\CompoundPattern\DuckSimulator;
 use PHPUnit\Framework\Attributes\Test;
 use PHPUnit\Framework\TestCase;

@@ -4,23 +4,24 @@ declare(strict_types=1);
 
 namespace DesignPatterns\CompoundPattern;
 
-use DesignPatterns\CompoundPattern\Adapters\GooseAdapter;
-use DesignPatterns\CompoundPattern\Decorators\QuackCounter;
-use DesignPatterns\CompoundPattern\Ducks\DuckCall;
-use DesignPatterns\CompoundPattern\Ducks\MallardDuck;
-use DesignPatterns\CompoundPattern\Ducks\Quackable;
-use DesignPatterns\CompoundPattern\Ducks\RedheadDuck;
-use DesignPatterns\CompoundPattern\Ducks\RubberDuck;
+use DesignPatterns\CompoundPattern\Adapter\GooseAdapter;
+use DesignPatterns\CompoundPattern\Decorator\QuackCounter;
+use DesignPatterns\CompoundPattern\Duck\Quackable;
+use DesignPatterns\CompoundPattern\Factory\CountingDuckFactory;
 use DesignPatterns\CompoundPattern\Geese\Goose;
 
 class DuckSimulator
 {
     public function simulateDucks(): DuckSimulatorDTO
     {
-        $mallardDuck = new QuackCounter(new MallardDuck());
-        $redheadDuck = new QuackCounter(new RedheadDuck());
-        $duckCall = new QuackCounter(new DuckCall());
-        $rubberDuck = new QuackCounter(new RubberDuck());
+        // Could inject the factory into the constructor
+        // for the sake of learning/simplicity: create it here
+        $duckFactory = new CountingDuckFactory();
+
+        $mallardDuck = $duckFactory->createMallardDuck();
+        $redheadDuck = $duckFactory->createRedheadDuck();
+        $duckCall = $duckFactory->createDuckCall();
+        $rubberDuck = $duckFactory->createRubberDuck();
 
         // Goose honks do not want counting
         $gooseDuck = new GooseAdapter(new Goose());

@@ -2,9 +2,9 @@
 
 declare(strict_types=1);
 
-namespace DesignPatterns\CompoundPattern\Adapters;
+namespace DesignPatterns\CompoundPattern\Adapter;
 
-use DesignPatterns\CompoundPattern\Ducks\Quackable;
+use DesignPatterns\CompoundPattern\Duck\Quackable;
 use DesignPatterns\CompoundPattern\Geese\Goose;
 
 class GooseAdapter implements Quackable

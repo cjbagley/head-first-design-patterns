@@ -2,7 +2,7 @@
 
 declare(strict_types=1);
 
-namespace DesignPatterns\CompoundPattern\Ducks;
+namespace DesignPatterns\CompoundPattern\Duck;
 
 class RubberDuck implements Quackable
 {

@@ -2,9 +2,9 @@
 
 declare(strict_types=1);
 
-namespace DesignPatterns\CompoundPattern\Ducks;
+namespace DesignPatterns\CompoundPattern\Duck;
 
-class MallardDuck implements Quackable
+class RedheadDuck implements Quackable
 {
     public function quack(): string
     {

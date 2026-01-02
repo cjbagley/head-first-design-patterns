@@ -2,9 +2,9 @@
 
 declare(strict_types=1);
 
-namespace DesignPatterns\CompoundPattern\Decorators;
+namespace DesignPatterns\CompoundPattern\Decorator;
 
-use DesignPatterns\CompoundPattern\Ducks\Quackable;
+use DesignPatterns\CompoundPattern\Duck\Quackable;
 
 class QuackCounter implements Quackable
 {
