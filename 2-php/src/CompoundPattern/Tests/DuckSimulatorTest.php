@@ -31,6 +31,8 @@ class DuckSimulatorTest extends TestCase
         $duckSimulator = new DuckSimulator();
         $resultDto = $duckSimulator->simulateDucks();
 
+        // Note - Goose honk does not count, so number of quacks is one less
+        self::assertEquals(5, $resultDto->getDuckCount());
         self::assertEquals(4, $resultDto->getNumberOfQuacks());
     }
 }

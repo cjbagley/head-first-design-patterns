@@ -8,6 +8,7 @@ readonly class DuckSimulatorDTO
 {
     public function __construct(
         private string $simulateDucksOutput,
+        private int $duckCount,
         private int $numberOfQuacks,
     ) {
     }
@@ -15,6 +16,11 @@ readonly class DuckSimulatorDTO
     public function getSimulateDucksOutput(): string
     {
         return $this->simulateDucksOutput;
+    }
+
+    public function getDuckCount(): int
+    {
+        return $this->duckCount;
     }
 
     public function getNumberOfQuacks(): int
